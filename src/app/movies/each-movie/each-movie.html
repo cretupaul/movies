@@ -1,0 +1,8 @@
+<h3 class="movie-title">{{movie.original_title}}</h3>
+<div *ngIf="movie.poster_path">
+    <img width="300px" src="{{frontPosterUrl+movie.poster_path}}"/>
+</div>
+<div class="movie-description">
+    {{movie.overview}}
+</div>
+<div class="rating"> Rating vote: <span class="rating-vote">{{movie.vote_average}}</span></div>

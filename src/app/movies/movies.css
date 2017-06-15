@@ -1,0 +1,37 @@
+
+h1 {
+    text-align: left;
+    padding:0;
+    margin:0;
+}
+ul {
+    margin:0;
+    padding:0;
+}
+li, ul {
+    float: left;
+    line-height: 1;
+    list-style: none;
+}
+.full-movies-container {
+    float: left;
+}
+li.each-movie-box {
+    width: calc(25% - 10px);
+    padding: 10px 0;
+    margin: 5px;
+    box-shadow: 0px 0px 18px -3px #000;
+    min-height: 645px;
+}
+li.each-movie-box:hover {
+    box-shadow:0px 0px 18px -3px #369;
+}
+span.current-genre {
+    float: left;
+    padding-left: 9px;
+    display: block;
+    font-weight: 800;
+}
+ul.all-movies-container {
+    margin-top: 20px;
+}

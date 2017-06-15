@@ -1,0 +1,18 @@
+<div class="full-movies-container">
+  <div *ngIf="selectedGenre">
+    <span class="current-genre"> Current genre :{{selectedGenre.name}}({{movieTotal}}) </span>
+    <div class="select-genre">
+      <md-select placeholder="Select genre" name="food" [(ngModel)]="selectedGenre.id" >
+        <md-option *ngFor="let gen of generes" [value]="gen.id" (click)="changeGenre(gen)">
+          {{gen.name}}
+        </md-option>
+      </md-select>
+    </div>
+    <ul class="all-movies-container">
+      <li class="each-movie-box" *ngFor="let eachMovie of movies; index as i">
+        <app-each-movie [movie]="eachMovie"></app-each-movie>
+      </li>
+    </ul>
+    <button md-button (click)="openDialog()">Open dialog</button>
+  </div>
+</div>
