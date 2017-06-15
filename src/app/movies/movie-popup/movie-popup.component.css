@@ -1,0 +1,52 @@
+ul {
+    margin:0;
+    padding:0;
+    clear:both;
+}
+li, ul {
+    float: left;
+    line-height: 1;
+    list-style: none;
+}
+li.each-movie-box {
+    margin:0 5px 0 0;
+    text-transform:capitalize;
+}
+li.each-movie-box:after {
+    content: ",";
+}
+li.each-movie-box:last-child:after{
+    content:"";
+}
+.each-info {
+    float: left;
+    width: 100%;
+    margin: 5px;
+}
+.close-dialog{
+    float:right;
+}
+img {
+    display: table;
+    margin: 10px auto;
+    box-shadow: 0px 0px 18px -3px #000;
+}
+.movie-title {
+    text-align:center;
+}
+.movie-title a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+span.bold {
+    display: block;
+    margin:5px 0;
+}
+.bold {
+    font-weight: 800;
+}
+.close-dialog[_ngcontent-c6] {
+    position: absolute;
+    right: 10px;
+    top:10px;
+}

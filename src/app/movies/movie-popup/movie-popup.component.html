@@ -1,0 +1,41 @@
+<div class="all-movie-information">
+  <md-dialog-actions>
+    <button class="close-dialog" [md-dialog-close]="true">
+      x
+    </button>
+  </md-dialog-actions>
+  <div class="movie-container">
+    <h3 class="movie-title" md-dialog-title>
+      <a href={{data.homepage}}>{{data.original_title}}</a></h3>
+    <div *ngIf="data.poster_path">
+      <img width="300px" src="{{baseImgrUrl+data.poster_path}}"/>
+    </div>
+    <div class="movie-description">
+        {{data.overview}}
+    </div>
+    <ul class="all-movies-genre">
+      <span class="bold">Movie Genre:</span>
+      <li class="each-movie-box" *ngFor="let eachGenre of data.genres; index as i">
+        {{eachGenre.name}}
+      </li>
+    </ul>
+    <ul class="all-movies-companies">
+      <span class="bold">Production Companies:</span>
+      <li class="each-movie-box" *ngFor="let eachCompany of data.production_companies; index as i">
+        {{eachCompany.name}}
+      </li>
+    </ul>
+    <ul class="all-movies-companies">
+      <span class="bold">Production Countries:</span>
+      <li class="each-movie-box" *ngFor="let eachCountry of data.production_countries; index as i">
+        {{eachCountry.name}}
+      </li>
+    </ul>
+    <div class="each-info">
+      Release date: {{data.release_date}}
+    </div>
+    <div class="each-info">
+      Status: {{data.status}}
+    </div>
+  </div>
+</div>

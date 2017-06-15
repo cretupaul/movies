@@ -1,6 +1,6 @@
 <h3 class="movie-title">{{movie.original_title}}</h3>
 <div *ngIf="movie.poster_path">
-    <img width="300px" src="{{frontPosterUrl+movie.poster_path}}"/>
+    <img width="300px" src="{{baseImgrUrl+movie.poster_path}}"/>
 </div>
 <div class="movie-description">
     {{movie.overview}}

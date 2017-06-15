@@ -12,25 +12,31 @@ const defaultGeneres = `https://api.themoviedb.org/3/genre/movie/list?api_key=${
 @Injectable()
 export class MovieService {
     private movies;
-    constructor(private _http: Http) {
+    constructor(private http: Http) {
 
     }
     getSpecifiedGenreLink(genId: number) {
         // tslint:disable-next-line:max-line-length
         return `https://api.themoviedb.org/3/genre/${genId}/movies?api_key=${apiKey}&language=en-US&include_adult=false&sort_by=created_at.asc`;
     }
+
     getSpecificMovieDetails(movieId: number) {
         // tslint:disable-next-line:max-line-length
         return `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&language=en-US`;
     }
+
     getMovies(genre): Observable<Movie[]> {
-        return this._http.get(this.getSpecifiedGenreLink(genre))
+        return this.http.get(this.getSpecifiedGenreLink(genre))
+        .map(result => result.json());
+    }
+
+    getSpecificMovie(movieId): Observable<Movie[]> {
+        return this.http.get(this.getSpecificMovieDetails(movieId))
         .map(result => result.json());
     }
 
     getAllGeneres(): Observable<Movie[]> {
-        return this._http.get(defaultGeneres)
+        return this.http.get(defaultGeneres)
         .map(result => result.json());
     }
-
 }

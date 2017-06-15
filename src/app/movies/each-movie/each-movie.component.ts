@@ -1,7 +1,8 @@
 import { Component, Input } from '@angular/core';
 
 import {Movie} from '../movie';
-export const frontPosterUrl = 'https://image.tmdb.org/t/p/w780/';
+export const baseImgrUrl = 'https://image.tmdb.org/t/p/w780/';
+
 @Component({
   selector: 'app-each-movie',
   templateUrl: './each-movie.html',
@@ -11,5 +12,5 @@ export const frontPosterUrl = 'https://image.tmdb.org/t/p/w780/';
 export class EachMovieComponent {
   @Input() movie: Movie;
   @Input() index: number;
-  frontPosterUrl = frontPosterUrl;
+  baseImgrUrl: string = baseImgrUrl;
 }

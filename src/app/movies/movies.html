@@ -9,10 +9,9 @@
       </md-select>
     </div>
     <ul class="all-movies-container">
-      <li class="each-movie-box" *ngFor="let eachMovie of movies; index as i">
-        <app-each-movie [movie]="eachMovie"></app-each-movie>
+      <li class="each-movie-box" *ngFor="let eachMovie of movies; index as i"  (click)="openDialog(eachMovie.id)">
+        <app-each-movie [movie]="eachMovie" ></app-each-movie>
       </li>
     </ul>
-    <button md-button (click)="openDialog()">Open dialog</button>
   </div>
 </div>

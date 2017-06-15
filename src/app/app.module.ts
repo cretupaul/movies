@@ -9,12 +9,14 @@ import { MdDialogModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { EachMovieComponent } from './movies/each-movie/each-movie.component';
 import { MovieComponent } from './movies/movies.component';
+import { MoviePopupComponent } from './movies/movie-popup/movie-popup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EachMovieComponent,
-    MovieComponent
+    MovieComponent,
+    MoviePopupComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +28,7 @@ import { MovieComponent } from './movies/movies.component';
   ],
   providers: [],
   bootstrap: [AppComponent],
-
+  entryComponents: [MoviePopupComponent]
 })
 
 export class AppModule { }
